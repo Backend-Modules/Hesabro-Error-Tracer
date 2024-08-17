@@ -1,0 +1,32 @@
+<?php
+
+return [
+    'Are you sure you want to delete this item?' => 'آیا از حذف این مورد مطمئن هستید؟',
+    'Can\'t delete this log' => 'امکان حذف این لاگ وجود ندارد.',
+    'The requested page does not exist.' => 'صفحه درخواستی یافت نشد.',
+    'Delete' => 'حذف',
+    'Delete All' => 'حذف همه',
+    'Mg Targets' => 'لاگ خطاها',
+    'Details' => 'جزئیات',
+    'Item Deleted' => 'حذف شد',
+    'Error In Save Info' => 'خطا در ذخیره اطلاعات',
+    'Create Mg Target' => 'ایجاد لاگ',
+    'Update' => 'ویرایش',
+    'Search' => 'جستجو',
+    'Reset' => 'ریست',
+    'ID' => 'شناسه',
+    'Level' => 'سطح',
+    'Category' => 'دسته‌بندی',
+    'Application' => 'نرم‌افزار',
+    'Log Time' => 'زمان لاگ',
+    'Trace' => 'دنباله',
+    'Message' => 'پیام',
+    'Ip' => 'آی‌پی',
+    'Session ID' => 'شناسه جلسه',
+    'User ID' => 'شناسه کاربر',
+    'Type' => 'نوع',
+    'Status' => 'وضعیت',
+    'Client' => 'مشتری',
+    'User Full Name' => 'نام کامل کاربر',
+    'Select...' => 'انتخاب...'
+];
