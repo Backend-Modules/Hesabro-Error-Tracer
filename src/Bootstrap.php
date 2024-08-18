@@ -66,7 +66,7 @@ class Bootstrap implements BootstrapInterface
     {
         foreach ($items as $item => $config) {
 
-            $notExist = !current(array_filter($app->$target, fn($i) => ($i['class'] ?? 'unknown') === $config['class'] ?? ''));
+            $notExist = !current(array_filter($app->$target, fn($i) => strtolower(trim($i['class'] ?? 'unknown', '\\')) === strtolower(trim($config['class'] ?? '', '\\'))));
 
             $method = 'set' . ucfirst($target);
 
