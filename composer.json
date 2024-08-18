@@ -1,6 +1,6 @@
 {
     "name": "hesabro/error-log",
-    "version" : "1.0.0",
+    "version" : "1.0.1",
     "description": "Hesabro error log module",
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
