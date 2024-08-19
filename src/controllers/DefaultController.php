@@ -5,6 +5,7 @@ namespace hesabro\errorlog\controllers;
 use hesabro\errorlog\models\MGTarget;
 use hesabro\errorlog\models\MGTargetSearch;
 use Yii;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
@@ -13,6 +14,67 @@ use yii\web\NotFoundHttpException;
  */
 class DefaultController extends Controller
 {
+    public function behaviors()
+    {
+        return array_merge(parent::behaviors(), [
+            [
+                'class' => AccessControl::class,
+                'rules' =>
+                    [
+                        [
+                            'allow' => true,
+                            'roles' => ['errorlog/default/index'],
+                            'actions' => ['index']
+                        ],
+                        [
+                            'allow' => true,
+                            'roles' => ['errorlog/default/category'],
+                            'actions' => ['category']
+                        ],
+                        [
+                            'allow' => true,
+                            'roles' => ['errorlog/default/archive'],
+                            'actions' => ['archive']
+                        ],
+                        [
+                            'allow' => true,
+                            'roles' => ['errorlog/default/expand'],
+                            'actions' => ['expand']
+                        ],
+                        [
+                            'allow' => true,
+                            'roles' => ['errorlog/default/view'],
+                            'actions' => ['view']
+                        ],
+                        [
+                            'allow' => true,
+                            'roles' => ['errorlog/default/delete'],
+                            'actions' => ['delete']
+                        ],
+                        [
+                            'allow' => true,
+                            'roles' => ['errorlog/default/delete-all'],
+                            'actions' => ['delete-all']
+                        ],
+                        [
+                            'allow' => true,
+                            'roles' => ['errorlog/default/delete-all-permanently'],
+                            'actions' => ['delete-all-permanently']
+                        ],
+                        [
+                            'allow' => true,
+                            'roles' => ['errorlog/default/delete-selected'],
+                            'actions' => ['delete-selected']
+                        ],
+                        [
+                            'allow' => true,
+                            'roles' => ['errorlog/default/delete-http'],
+                            'actions' => ['delete-http']
+                        ]
+                    ]
+            ]
+        ]);
+    }
 
     /**
      * @param int $type
@@ -175,7 +237,6 @@ class DefaultController extends Controller
         ]);
     }
 
-
     public function actionDeleteHttp()
     {
         $response = ['success' => false, 'data' => '', 'msg' => "یافت نشد."];
@@ -198,6 +259,7 @@ class DefaultController extends Controller
 
         return json_encode($response);
     }
+
     /**
      * Finds the MGTarget model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
