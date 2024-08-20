@@ -5,10 +5,11 @@ namespace hesabro\errorlog;
 use Yii;
 use yii\base\Module as BaseModule;
 use yii\i18n\PhpMessageSource;
+use hesabro\helpers\Module as HesabroHelpersModule;
 
 class Module extends BaseModule
 {
-    public ?string $mongo_dsn = null;
+    public string $mongoConnection = 'mongodb';
 
     public ?string $application = null;
 
@@ -16,7 +17,7 @@ class Module extends BaseModule
 
     public ?string $client = null;
 
-    public ?string $host_name = null;
+    public ?string $hostName = null;
 
     public bool $isSecure = true;
 
@@ -25,6 +26,12 @@ class Module extends BaseModule
         parent::init();
 
         $this->registerTranslation();
+
+        $this->setModules([
+            'helpers' => [
+                'class' => HesabroHelpersModule::class,
+            ]
+        ]);
     }
 
     private function registerTranslation(): void

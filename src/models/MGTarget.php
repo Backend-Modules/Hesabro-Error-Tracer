@@ -5,7 +5,7 @@ namespace hesabro\errorlog\models;
 use hesabro\errorlog\Module;
 use Yii;
 use yii\log\Logger;
-use yii\mongodb\ActiveRecord;
+use hesabro\errorlog\ActiveRecord;
 use yii\web\Request;
 
 /**

@@ -10,7 +10,7 @@ use yii\helpers\HtmlPurifier;
 /* @var $model MGTarget */
 
 $REQUEST_URI = $model->convertMessageApplication("REQUEST_URI: ", " END_URI;");
-$RequestUrl = $model->application == 'backend' ? (Module::getInstance()->isSecure ? 'https://' : 'http://') . $model->client->domain . '.' . Module::getInstance()->host_name . $REQUEST_URI : '';
+$RequestUrl = $model->application == 'backend' ? (Module::getInstance()->isSecure ? 'https://' : 'http://') . $model->client->domain . '.' . Module::getInstance()->hostName . $REQUEST_URI : '';
 $httpReferrer = $model->convertMessageApplication("HTTP_REFERER: ", " END_REFERER;");
 ?>
 <div class="card-body text-right" dir="ltr">
