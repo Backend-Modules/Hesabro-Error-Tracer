@@ -24,7 +24,7 @@ class DefaultController extends Controller
                         [
                             'allow' => true,
                             'roles' => ['errorlog/default/index'],
-                            'actions' => ['index']
+                            'actions' => ['index', 'expand', 'view']
                         ],
                         [
                             'allow' => true,
@@ -38,38 +38,8 @@ class DefaultController extends Controller
                         ],
                         [
                             'allow' => true,
-                            'roles' => ['errorlog/default/expand'],
-                            'actions' => ['expand']
-                        ],
-                        [
-                            'allow' => true,
-                            'roles' => ['errorlog/default/view'],
-                            'actions' => ['view']
-                        ],
-                        [
-                            'allow' => true,
                             'roles' => ['errorlog/default/delete'],
-                            'actions' => ['delete']
-                        ],
-                        [
-                            'allow' => true,
-                            'roles' => ['errorlog/default/delete-all'],
-                            'actions' => ['delete-all']
-                        ],
-                        [
-                            'allow' => true,
-                            'roles' => ['errorlog/default/delete-all-permanently'],
-                            'actions' => ['delete-all-permanently']
-                        ],
-                        [
-                            'allow' => true,
-                            'roles' => ['errorlog/default/delete-selected'],
-                            'actions' => ['delete-selected']
-                        ],
-                        [
-                            'allow' => true,
-                            'roles' => ['errorlog/default/delete-http'],
-                            'actions' => ['delete-http']
+                            'actions' => ['delete', 'delete-all', 'delete-all-permanently', 'delete-selected', 'delete-http']
                         ]
                     ]
             ]
